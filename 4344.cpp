@@ -8,7 +8,7 @@ int main() {
     for(int i=0; i<C; i++) {
         int student;
         double sum = 0;
-        double rate = 0;
+        double numAboveAverage = 0;
         std::cin >> student;
         double* grade = new double[student];
         
@@ -21,11 +21,12 @@ int main() {
         sum = sum/student;
         
         for(int j=0; j<student; j++) {
-            if(grade[j] > sum) rate++;
+            if(grade[j] > sum) numAboveAverage++;
         }
         
-        std::cout << std::fixed << std::setprecision(3) << (rate/student) * 100 << "%" << std::endl;
+        std::cout << std::fixed << std::setprecision(3) << (numAboveAverage/student) * 100 << "%" << std::endl;
         
         delete [] grade;
     }
 }
+
